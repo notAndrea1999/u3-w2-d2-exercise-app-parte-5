@@ -41,7 +41,7 @@ const AddComment = (props) => {
   };
 
   return (
-    <Form className="mt-3 " onSubmit={handleSubmit}>
+    <Form className="mt-3 bg-dark p-3" onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Inserisci un Commento</Form.Label>
         <Form.Control
@@ -73,7 +73,7 @@ const AddComment = (props) => {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Invia
+        Invia il tuo feedback
       </Button>
     </Form>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Alert, Col, Container, Form, InputGroup, Row, Spinner } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 import CommentArea from "./CommentArea";
 
@@ -7,9 +7,11 @@ const BookList = (props) => {
   const [savedInput, setSavedInput] = useState("");
   const [filteredBook, setFilteredBook] = useState(props.books);
   const [selectedBook, setSelectedBook] = useState("");
+  const [isItSelected, setIsItSelected] = useState(false);
 
   const isSelected = (id) => {
     setSelectedBook(id);
+    setIsItSelected(true);
   };
 
   const filterBookList = (value) => {
@@ -45,7 +47,7 @@ const BookList = (props) => {
           </Row>
         </Col>
         <Col className="col-4">
-          {isSelected ? (
+          {isItSelected ? (
             <CommentArea id={selectedBook} />
           ) : (
             <Alert variant="info" className="mt-4">

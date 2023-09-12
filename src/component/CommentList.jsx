@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 const URL = "https://striveschool-api.herokuapp.com/api/comments/";
 
@@ -18,9 +19,19 @@ const CommentList = (props) => {
 
   return (
     <ListGroup>
+      <h4 className="display-4">Commenti</h4>
       {props.list.map((comment, index) => (
-        <ListGroup.Item key={index}>
-          {comment.comment} - {comment.author}
+        <ListGroup.Item className="bg-warning text-center" key={index}>
+          <p className="me-auto">
+            Commento: <span>{comment.comment}</span>
+          </p>
+          <p className="me-auto">
+            Autore: <span>{comment.author}</span>
+          </p>
+          <p className="me-auto">
+            Rate: <span>{comment.rate}</span>
+          </p>
+
           <Button
             onClick={(event) => {
               handleDelete(event, comment._id);
