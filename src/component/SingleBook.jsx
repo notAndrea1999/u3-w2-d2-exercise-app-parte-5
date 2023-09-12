@@ -10,7 +10,7 @@ const SingleBook = (props) => {
   }
   return (
     <Col className="col-12 col-sm-6 col-md-4 col-lg-3 gy-4">
-      <Card style={{ border: props.book.asin === props.id ? "3px solid red" : "2px solid light-grey" }}>
+      <Card style={{ border: props.book.asin === props.id ? "3px solid red" : "2px solid lightgray" }}>
         <Card.Img
           variant="top"
           style={{
